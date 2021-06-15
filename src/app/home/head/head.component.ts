@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-head',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadComponent implements OnInit {
 
+  @Output() onClick = new EventEmitter()
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showSidenav() {
+    this.onClick.emit();
   }
 
 }

@@ -1,0 +1,17 @@
+.example-spacer {
+	flex: 1 1 auto;
+}
+mat-toolbar {
+	font-size: 16px;
+	background-color: #343A3F;
+	color: #C7CACB;
+	padding: 8px;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 24px;
+}
+
+a {
+	color: #CBCECF;
+	text-decoration: none;
+	padding: 16px;
+}

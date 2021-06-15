@@ -1,12 +1,347 @@
-<div>
-    <app-head></app-head>
-</div>
-<div>
-    <app-side-nav></app-side-nav>
-</div>
-<div class="content">
-   <app-dashboard></app-dashboard>
-</div>
-<div>
-    <app-footer></app-footer>
-</div>
+<mat-drawer-container class="container mat-typography"  autosize>
+
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true" [class.expanded]="isExpanded">
+      <mat-nav-list>
+        <mat-list-item class="logo">
+          <img mat-list-icon src="../assets/images/logo.png"/>
+          <h2 mat-line *ngIf="isExpanded">BasCOMMERCE</h2>
+        </mat-list-item>
+        <input class="search" type="text" *ngIf="isExpanded" placeholder="Search">
+        <mat-list-item>
+          <mat-icon mat-list-icon>desktop_mac</mat-icon>
+          <h4 mat-line *ngIf="isExpanded">Dashboard</h4>
+        </mat-list-item>
+        <mat-list-item (click)="isCatalog()" [class.bgSelected]="catalogSelected">
+          <mat-icon mat-list-icon [class.selected]="catalogSelected">library_books</mat-icon>
+          <h4 mat-line *ngIf="isExpanded" [class.selected]="catalogSelected" >Catalog</h4>
+          <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="catalogSelected" [class.rotate-back]="!catalogSelected"></i>
+        </mat-list-item>
+        <div *ngIf="catalogSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Product</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Categories</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Manufacturers</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Product reviews</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Product tags</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Attributes</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isSales()" [class.bgSelected]="salesSelected">
+            <mat-icon mat-list-icon [class.selected]="salesSelected">shopping_cart</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="salesSelected" >Sales</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="salesSelected" [class.rotate-back]="!salesSelected"></i>
+        </mat-list-item>
+        <div *ngIf="salesSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Orders</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Shipments</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Return requests</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Recurring payments</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Gift cards</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Shopping carts and<br> wishlists</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isCustomers()" [class.bgSelected]="customersSelected">
+            <mat-icon mat-list-icon [class.selected]="customersSelected">person_outline</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="customersSelected" >Customers</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="customersSelected" [class.rotate-back]="!customersSelected"></i>
+        </mat-list-item>
+        <div *ngIf="customersSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Customers</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Customer roles</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Online customers</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Vendors</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Activity log</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Activity Types</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >GDPR requests (log)</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isPromotions()" [class.bgSelected]="promotionsSelected">
+            <mat-icon mat-list-icon [class.selected]="promotionsSelected">style</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="promotionsSelected" >Promotions</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="promotionsSelected" [class.rotate-back]="!promotionsSelected"></i>
+        </mat-list-item>
+        <div *ngIf="promotionsSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Discounts</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Affiliates</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Newsletter subscribers</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Campaigns</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isContent()" [class.bgSelected]="contentSelected">
+            <mat-icon mat-list-icon [class.selected]="contentSelected">dashboard</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="contentSelected" >Content management</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="contentSelected" [class.rotate-back]="!contentSelected"></i>
+        </mat-list-item>
+        <div *ngIf="contentSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Topics (pages)</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Message templates</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >News items</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >News comments</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Blog posts</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Blog comments</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Polls</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Forums</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isConfig()" [class.bgSelected]="configSelected">
+            <mat-icon mat-list-icon [class.selected]="configSelected">settings_applications</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="configSelected" >Configuration</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="configSelected" [class.rotate-back]="!configSelected"></i>
+        </mat-list-item>
+        <div *ngIf="configSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Settings</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Email accounts</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Stores</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Countries</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Languages</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Currencies</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Payment methods</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Payment restrictions</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Tax providers</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Tax categories</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Shipping</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Access control list</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Widgets</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Authentication</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Local plugins</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >All plugins and themes</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isSystem()" [class.bgSelected]="systemSelected">
+            <mat-icon mat-list-icon [class.selected]="systemSelected">fiber_manual_record</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="systemSelected" >System</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="systemSelected" [class.rotate-back]="!systemSelected"></i>
+        </mat-list-item>
+        <div *ngIf="systemSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >System information</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Log</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Warnings</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Maintenance</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Message queue</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Schedule tasks</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Search engine friendly<br> page names</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Templates</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isReports()" [class.bgSelected]="reportsSelected">
+            <mat-icon mat-list-icon [class.selected]="reportsSelected">insert_chart</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="reportsSelected" >Reports</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="reportsSelected" [class.rotate-back]="!reportsSelected"></i>
+        </mat-list-item>
+        <div *ngIf="reportsSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Sales summary</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Low stock</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Bestsellers</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Products never<br> purchased</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Country sales</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Customer reports</h4>
+            </mat-list-item>
+        </div>
+        <mat-list-item (click)="isHelp()" [class.bgSelected]="helpSelected">
+            <mat-icon mat-list-icon [class.selected]="helpSelected">help</mat-icon>
+            <h4 mat-line *ngIf="isExpanded" [class.selected]="helpSelected" >Help</h4>
+            <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="helpSelected" [class.rotate-back]="!helpSelected"></i>
+        </mat-list-item>
+        <div *ngIf="helpSelected && isExpanded" class='sub-nav'>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Help topics</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Community forums</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <i mat-list-icon class="las la-dot-circle"></i>
+                <h4 mat-line >Premium support<br> services</h4>
+            </mat-list-item>
+        </div>
+      </mat-nav-list>
+    </mat-drawer>
+  
+    <div>
+        <div>
+            <app-head (onClick)="showNav()"></app-head>
+        </div>
+        <div class="content">
+            <app-dashboard></app-dashboard>
+         </div>
+         <div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+  </mat-drawer-container>
