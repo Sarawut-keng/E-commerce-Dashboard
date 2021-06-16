@@ -1,0 +1,49 @@
+.page-name {
+
+	padding-left: 20px;
+
+}
+.page-name h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+	padding-top: 16px;
+
+}
+.card {
+  width: 95%;
+  height: auto;
+  border-top: 3px solid #3579F6;
+}
+.las {
+	font-size: 30px;
+	padding: 5px 0px;
+}
+mat-card {
+	padding-top: 5px;
+	margin: 8px;
+	border: 0;
+}
+mat-card-title {
+	font-family: 'Source Sans Pro', sans-serif;
+	padding-top: 10px;
+	font-size: 18px;
+}
+mat-card-header {
+	border-bottom: 1px solid #DFDFDF;
+}
+
+
+#news {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#statistics {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}

@@ -3,7 +3,7 @@
 .content {
 	width: 100%;
 	min-height: 100vh;
-	background-color: blanchedalmond;
+	background-color: #ECF0F4;
 }
 .container {
 	position: absolute;
@@ -12,8 +12,13 @@
 	left: 0;
 	right: 0;
 }
+
 .mat-list-base {
 	padding-top: 7px;
+}
+.mat-list-item h4 {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #C7CACB;
 }
 .mat-list-item-content {
 	padding-right: 20px;
@@ -69,15 +74,15 @@ mat-drawer {
 	display: none;
 }
 
-h4, h2 {
+.sub-nav h4 {
 	font-family: 'Source Sans Pro', sans-serif;
-	color: #C7CACB;
 }
 
 .logo {
 	border-bottom: 1px solid rgb(97, 97, 97);
 }
 .logo h2 {
+	font-family: 'Source Sans Pro', sans-serif;
 	color: white;
 	font-weight: bold;
 	font-size: 20px;
