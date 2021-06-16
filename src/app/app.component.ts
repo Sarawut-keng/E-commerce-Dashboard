@@ -5,7 +5,16 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [trigger('openClose', [
+    transition(':enter', [
+      style({ opacity: 0 }),
+      animate('100ms', style({ opacity: 1 })),
+    ]),
+    transition(':leave', [
+      animate('100ms', style({ opacity: 0 }))
+    ])
+  ]),]
 })
 
 export class AppComponent {
@@ -23,12 +32,24 @@ export class AppComponent {
   reportsSelected: boolean = false;
   helpSelected: boolean = false;
 
+  twice: boolean[] = [this.catalogSelected, this.salesSelected, this.customersSelected, this.promotionsSelected, this.contentSelected,
+                      this.configSelected, this.systemSelected, this.reportsSelected, this.helpSelected];
+
+  isTwice(item: boolean) {
+    for (let i of this.twice) {
+      if (i != item) {
+        i = false;
+      }
+    }
+  }
+
   showNav() {
     this.isExpanded = !this.isExpanded;
   }
 
   isCatalog() {
     this.catalogSelected = !this.catalogSelected;
+    this.isTwice(this.catalogSelected);
   }
 
   isSales() {
@@ -62,4 +83,5 @@ export class AppComponent {
   isHelp() {
     this.helpSelected = !this.helpSelected;
   }
+
 }
