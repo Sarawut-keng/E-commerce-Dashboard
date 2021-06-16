@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
 }

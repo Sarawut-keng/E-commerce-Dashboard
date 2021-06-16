@@ -1,0 +1,127 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.container > * {
+	flex: 1 1 10em;
+}
+
+.card {
+	box-shadow:  0px 0px 5px 0px rgba(48, 30, 30, 0.096);
+	border-radius: 5px;
+	margin: 5px;
+	min-width: 195px;
+	height: 150px;
+	margin: 20px 10px 20px 10px;
+}
+
+.detail {
+	display: flex;
+	flex-wrap:nowrap;
+	height: 120px;
+}
+.detail > *:nth-child(1) {
+	flex: 70%;
+}
+.detail > *:nth-child(2) {
+	flex: 30%;
+}
+
+
+.meta-stat {
+	text-align: left;
+}
+.icon {
+	text-align: right;
+}
+.icon mat-icon {
+	width: 70px;
+	height: 70px;
+	font-size: 70px;
+	padding-right: 15px;
+	padding-top: 15px;
+}
+
+.value {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	font-size: 36px;
+	font-weight: bolder;
+	padding: 20px 0px 20px 10px;
+}
+.name {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 0px 0px 20px 10px;
+}
+
+.button {
+	padding: 5px 0px;
+	cursor: pointer;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.button p {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	font-size: 16px;
+	margin: 0;
+}
+
+#orders {
+	background-color: #14A2B8;
+}
+#orders mat-icon {
+	color: #148A9C;
+	transition: 0.5s;
+}
+#orders .button {
+	background-color: #1192A5;
+}
+#orders:hover mat-icon {
+	transform: scale(1.2);
+}
+
+#registered {
+	background-color: #28A745;
+}
+#registered mat-icon {
+	color: #248E3B;
+	transition: 0.5s;
+}
+#registered .button {
+	background-color: #26963E;
+}
+#registered:hover mat-icon {
+	transform: scale(1.2);
+}
+
+#pending {
+	background-color: #FFC007;
+}
+#pending mat-icon {
+	color: #D9A40C;
+	transition: 0.5s;
+}
+#pending .button {
+	background-color: #E5AD0A;
+}
+#pending:hover mat-icon {
+	transform: scale(1.2);
+}
+
+#stock {
+	background-color: #DC3444;
+}
+#stock mat-icon {
+	color: #BC2D3A;
+	transition: 0.5s;
+}
+#stock .button {
+	background-color: #C52F3D;
+}
+#stock:hover mat-icon {
+	transform: scale(1.2);
+}
