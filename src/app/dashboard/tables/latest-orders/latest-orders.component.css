@@ -1,0 +1,46 @@
+table {
+	width: 100%;
+}
+.mat-elevation-z8{
+	box-shadow: none;
+}
+td.mat-cell {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mat-column-status {
+	text-align: center;
+}
+.mat-column-view {
+	text-align: center;
+}
+
+.order-status {
+	margin: 0;
+	padding: 5px 10px;
+	margin: 10px 0px 10px 10px;
+	width: fit-content;
+}
+.complete {
+	background-color: #04A559;
+	border-radius: 5px;
+	color: white;
+	font-weight: 800;
+}
+.processing {
+	background-color: #00C0EF;
+	border-radius: 5px;
+	color: white;
+	font-weight: 800;
+}
+.pending {
+	background-color: #F39C12;
+	border-radius: 5px;
+	color: white;
+	font-weight: 800;
+}
+
+mat-icon {
+	padding: 5px;
+}

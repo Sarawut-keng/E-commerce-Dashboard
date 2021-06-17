@@ -29,3 +29,119 @@
     </mat-card-content>
   </mat-card>
 </div>
+
+<div id="charts">
+    <div id="first-chart">
+      <mat-card class="more-card">
+        <mat-card-header>
+          <div mat-card-avatar><i class="las la-shopping-cart"></i></div>
+          <mat-card-title>Orders</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <app-chart></app-chart>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div id="second-chart">
+      <mat-card class="more-card">
+        <mat-card-header>
+          <div mat-card-avatar><i class="las la-user-alt"></i></div>
+          <mat-card-title>New customers</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <app-chart></app-chart>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+</div>
+
+<div id="first-row-table">
+  <div id="first-table">
+    <mat-card class="more-card">
+      <mat-card-header>
+        <div mat-card-avatar><i class="las la-money-bill"></i></div>
+        <mat-card-title>Order totals</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <app-order-totals></app-order-totals>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div id="second-table">
+    <mat-card class="more-card">
+      <mat-card-header>
+        <div mat-card-avatar><i class="las la-hourglass-half"></i></div>
+        <mat-card-title>Incomplete orders</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <app-incomplete-orders></app-incomplete-orders>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div id="first-row-table">
+  <div id="third-table">
+    <mat-card class="more-card">
+      <mat-card-header>
+        <div mat-card-avatar><i class="las la-cart-plus"></i></div>
+        <mat-card-title>Latest Orders</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <app-latest-orders></app-latest-orders>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div id="fourth-table">
+    <mat-card class="more-card">
+      <mat-card-header>
+        <div mat-card-avatar><i class="las la-search"></i></div>
+        <mat-card-title>Popular search keywords</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <app-popular-search-keywords></app-popular-search-keywords>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div id="second-row-table">
+  <div id="fifth-table">
+    <mat-card class="more-card">
+      <mat-card-header>
+        <div mat-card-avatar><i class="las la-star"></i></div>
+        <mat-card-title>Bestsellers by quantity</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <app-bestsellers [toSort]='tableSortByQuantity'></app-bestsellers>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div id="sixth-table">
+    <mat-card class="more-card">
+      <mat-card-header>
+        <div mat-card-avatar><i class="lar la-star"></i></div>
+        <mat-card-title>Bestsellers by amount</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <app-bestsellers [toSort]='tableSortByAmount'></app-bestsellers>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

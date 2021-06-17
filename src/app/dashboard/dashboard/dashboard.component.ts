@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  tableSortByQuantity: string = 'quantity';
+  tableSortByAmount: string = 'amount';
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8">
+	<table mat-table [dataSource]="dataSource">
+	
+		<ng-container matColumnDef="order">
+			<th mat-header-cell *matHeaderCellDef> Order # </th>
+			<td mat-cell *matCellDef="let element"> {{element.order}} </td>
+		</ng-container>
+	
+		<ng-container matColumnDef="status">
+			<th mat-header-cell *matHeaderCellDef> Order status </th>
+			<td mat-cell *matCellDef="let element"> 
+				<p class='order-status' 
+				[class.complete]="element.status == 'Complete'" 
+				[class.processing]="element.status == 'Processing'"
+				[class.pending]="element.status == 'Pending'">{{element.status}}</p> 
+			</td>
+		</ng-container>
+	
+		<ng-container matColumnDef="customer">
+			<th mat-header-cell *matHeaderCellDef> Customer </th>
+			<td mat-cell *matCellDef="let element"> {{element.customer[0]}} <br> {{element.customer[1]}} </td>
+		</ng-container>
+	
+		<ng-container matColumnDef="created">
+			<th mat-header-cell *matHeaderCellDef> Created on </th>
+			<td mat-cell *matCellDef="let element"> {{element.created[0]}} <br> {{element.created[1]}} </td>
+		</ng-container>
+	
+		<ng-container matColumnDef="view">
+			<th mat-header-cell *matHeaderCellDef> view </th>
+			<td mat-cell *matCellDef="let element"> <button mat-flat-button color="primary"><mat-icon>remove_red_eye</mat-icon>{{element.view}}</button> </td>
+		</ng-container>
+	
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+	<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

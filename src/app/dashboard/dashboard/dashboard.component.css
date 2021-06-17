@@ -11,14 +11,23 @@
 
 }
 .card {
-  width: 95%;
-  height: auto;
-  border-top: 3px solid #3579F6;
+	width: 95%;
+	height: auto;
+	border-top: 3px solid #3579F6;
+}
+.more-card {
+	height: auto;
+	border-top: 3px solid #3579F6;
 }
 .las {
 	font-size: 30px;
 	padding: 5px 0px;
 }
+.lar {
+	font-size: 30px;
+	padding: 5px 0px;
+}
+
 mat-card {
 	padding-top: 5px;
 	margin: 8px;
@@ -46,4 +55,36 @@ mat-card-header {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+}
+
+#charts {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0px 10px;
+}
+#charts > * {
+	flex: 1 1 50%;
+	max-width: 50%;
+}
+
+#first-row-table {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0px 10px;
+}
+#first-row-table > *:nth-child(1) {
+	flex: 1 1 65%;
+}
+#first-row-table > *:nth-child(2) {
+	flex: 1 1 35%;
+}
+
+#second-row-table {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0px 10px;
+}
+#second-row-table > * {
+	flex: 1 1 50%;
+	max-width: 50%;
 }

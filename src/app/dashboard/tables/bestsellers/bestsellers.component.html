@@ -1,0 +1,28 @@
+<div class="mat-elevation-z8">
+	<table mat-table matSort [dataSource]="dataSource" matSortActive="{{ toSort }}" matSortDirection="desc">
+	
+		<ng-container matColumnDef="name">
+			<th mat-header-cell *matHeaderCellDef > Name </th>
+			<td mat-cell *matCellDef="let element"> {{element.name}} </td>
+		</ng-container>
+	
+		<ng-container matColumnDef="quantity">
+			<th mat-header-cell *matHeaderCellDef > Total quantity </th>
+			<td mat-cell *matCellDef="let element"> {{element.quantity}}</td>
+		</ng-container>
+
+		<ng-container matColumnDef="amount">
+			<th mat-header-cell *matHeaderCellDef > Total amount <br> (exclude tax) </th>
+			<td mat-cell *matCellDef="let element"> {{formatterChange.format(element.amount)}}</td>
+		</ng-container>
+
+		<ng-container matColumnDef="view">
+			<th mat-header-cell *matHeaderCellDef > view </th>
+			<td mat-cell *matCellDef="let element"> <button mat-flat-button color="primary"><mat-icon>remove_red_eye</mat-icon>{{element.view}}</button> </td>
+		</ng-container>
+	
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+	<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

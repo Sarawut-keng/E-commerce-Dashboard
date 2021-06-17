@@ -1,0 +1,18 @@
+table {
+	width: 100%;
+	box-shadow: none;
+	height: 500px;
+}
+.mat-column-item {
+	width: 80px;
+	padding-right: 30px;
+}
+.mat-column-total {
+	width: 150px;
+}
+.mat-column-count {
+	text-align: center;
+}
+mat-icon {
+	padding: 3px;
+}
