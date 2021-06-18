@@ -1,0 +1,68 @@
+.search-area {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+}
+.search-area-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	width: 95%;
+	height: auto;
+
+}
+.search-content-form {
+	padding: 0px 20px;
+	text-align: right;
+	padding-right: 70px;
+}
+.box-input {
+	font-family: 'Source Sans Pro', sans-serif;
+	width: 300px;
+	height: 20px;
+	border: 1px solid #CED4D9;
+	border-radius: none;
+	padding: 6px 12px;
+	margin: 3px;
+}
+.box-input-list {
+	font-family: 'Source Sans Pro', sans-serif;
+	width: 326px;
+	height: 35px;
+	border: 1px solid #CED4D9;
+	border-radius: none;
+	margin: 3px;
+}
+.box-input-sku {
+	font-family: 'Source Sans Pro', sans-serif;
+	width: 200px;
+	height: 20px;
+	border: 1px solid #CED4D9;
+	border-radius: none;
+	padding: 6px 12px;
+	margin: 3px 0px 3px 3px;
+	border-right: none;
+}
+span mat-icon {
+	color: #3C8DBC;
+	font-size: 16px;
+	padding-right: 10px;
+}
+label {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+}
+.sku-btn {
+	border: none;
+	padding: 6px 8px 8px 7px;
+	margin-right: 3px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	background-color: #00C0EF;
+	color: white;
+	cursor: pointer;
+}

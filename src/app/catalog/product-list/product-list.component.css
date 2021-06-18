@@ -1,4 +1,4 @@
-.products-container {
+.products-header-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -6,7 +6,7 @@
 	padding-top: 20px;
 }
 .products-header {
-	width: 95%;
+	width: 97.5%;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-template-rows: 1fr;
@@ -34,7 +34,13 @@
 }
 
 .add-new-btn {
+	color: white;
 	background-color: #3C8DBC;
+}
+.add-new-btn span {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	color: white;
 }
 .download-btn {
 	background-color: #5F5CA8;
@@ -65,3 +71,42 @@
 	background-color: #bb4130;
 }
 
+.search-box-container {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	width: 95%;
+	padding-bottom: 20px;
+}
+.card .las {
+	font-size: 30px;
+	padding: 5px 0px;
+}
+
+mat-card {
+	padding-top: 5px;
+	margin: 8px;
+	border: 0;
+}
+mat-card-title {
+	font-family: 'Source Sans Pro', sans-serif;
+	padding-top: 10px;
+	font-size: 18px;
+}
+mat-card-action mat-icon {
+	padding: 3px;
+}
+.main-search-button {
+	color: white;
+	background-color: #3C8DBC;
+	width: 120px;
+}
+.main-search-button span {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	color: white;
+}

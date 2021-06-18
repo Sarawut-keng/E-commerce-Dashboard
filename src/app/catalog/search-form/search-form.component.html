@@ -1,0 +1,57 @@
+<div class="search-area">
+	<form class="search-area-form">
+		<div id="left-search-form" class="search-content-form">
+			<label for="pname">Product name<span matTooltip="A product name"><mat-icon>help</mat-icon></span></label>
+			<input type="text" id="pname" name="pname" class="box-input"><br>
+			<label for="category">Category<span matTooltip="Search by categories."><mat-icon>help</mat-icon></span></label>
+			<select id="category" name="category" class="box-input-list">
+				<option value="all">All</option>
+				<option value="computer">Computer</option>
+				<option value="electronic">Electronic</option>
+				<option value="apparel">Apparel</option>
+				<option value="digital-download">Digital download</option>
+				<option value="books">Books</option>
+				<option value="jewelry">jewelry</option>
+				<option value="gifts-card">Gifts card</option>
+			</select><br>
+			<label for="search-subcategories">Search subcategories<span matTooltip="Check to search in subcategories."><mat-icon>help</mat-icon></span></label>
+			<input type="checkbox"><br>
+			<label for="manufacturer">Manufacturer<span matTooltip="Search by specific manufacturer"><mat-icon>help</mat-icon></span></label>
+			<select id="manufacturer" name="manufacturer" class="box-input-list">
+				<option value="all">All</option>
+				<option value="apple">Apple</option>
+				<option value="hp">HP</option>
+				<option value="nike">Nike</option>
+			</select><br>
+			<label for="vendor">Vendor<span matTooltip="Search by specific vendor"><mat-icon>help</mat-icon></span></label>
+			<select id="vendor" name="vendor" class="box-input-list">
+				<option value="all">All</option>
+				<option value="vendor1">Vendor1</option>
+				<option value="vendor2">Vendor2</option>
+			</select>
+		</div>
+		<div id="right-search-form" class="search-content-form">
+			<label for="warehouse">Warehouse<span matTooltip="Search by specific warehouse"><mat-icon>help</mat-icon></span></label>
+			<select id="warehouse" name="warehouse" class="box-input-list">
+				<option value="all">All</option>
+				<option value="los-angeles">Warehouse1 (Los Angeles)</option>
+				<option value="new-york">Warehouse2 (New York)</option>
+			</select><br>
+			<label for="ptype">Product type<span matTooltip="Search by product type"><mat-icon>help</mat-icon></span></label>
+			<select id="ptype" name="product-type" class="box-input-list">
+				<option value="all">All</option>
+				<option value="simple">Simple</option>
+				<option value="group">Group (Product with Variants)</option>
+			</select><br>
+			<label for="published">Published<span matTooltip="Search by a publish property"><mat-icon>help</mat-icon></span></label>
+			<select id="published" name="published" class="box-input-list">
+				<option value="all">All</option>
+				<option value="published">Published only</option>
+				<option value="unpublished">Unpublished only</option>
+			</select><br>
+			<label for="SKU">Go directly to product SKU<span matTooltip="Enter product sku and click go."><mat-icon>help</mat-icon></span></label>
+			<input type="text" id="SKU" name="SKU" class="box-input-sku">
+			<button class="sku-btn">Go</button>
+		</div>
+	</form>
+</div>
