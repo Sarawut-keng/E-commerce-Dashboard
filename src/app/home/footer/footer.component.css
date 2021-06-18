@@ -1,7 +1,7 @@
 .main-footer {
 	font-family: 'Source Sans Pro', sans-serif;
 	display: grid;
-	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
 	justify-content: center;
 	align-items: center;
@@ -22,6 +22,7 @@
 	color: #869099;
 }
 .right-main-footer {
+	text-align: right;
 	font-weight: 900;
 	color: #869099;
 }

@@ -1,0 +1,67 @@
+.products-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+}
+.products-header {
+	width: 95%;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
+}
+.products-header-name h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+}
+.products-header-button {
+	text-align: right;
+}
+.products-header-button button {
+	margin: 0px 2px;
+	cursor: pointer;
+}
+.products-header-button span {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	color: white;
+}
+.products-header-button mat-icon {
+	padding: 0px 2px;
+	color: white;
+}
+
+.add-new-btn {
+	background-color: #3C8DBC;
+}
+.download-btn {
+	background-color: #5F5CA8;
+}
+.export-btn {
+	background-color:  #28A745;
+}
+.import-btn {
+	background-color: #3D9970;
+}
+.delete-btn {
+	background-color: #DD4B39;
+}
+
+.add-new-btn:hover {
+	background-color: #317297;
+}
+.download-btn:hover {
+	background-color: #514f8f;
+}
+.export-btn:hover {
+	background-color:  #1d8135;
+}
+.import-btn:hover {
+	background-color: #327a5a;
+}
+.delete-btn:hover {
+	background-color: #bb4130;
+}
+

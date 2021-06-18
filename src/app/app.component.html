@@ -9,7 +9,7 @@
         </div>
         <div [class.menu-container]="isExpanded">
             <input class="search" type="text" *ngIf="isExpanded" placeholder="Search">
-                <mat-list-item>
+                <mat-list-item [routerLink]="['/home']"> 
                     <mat-icon mat-list-icon>desktop_mac</mat-icon>
                     <h4 mat-line *ngIf="isExpanded">Dashboard</h4>
                 </mat-list-item>
@@ -19,7 +19,7 @@
                     <i class="las la-angle-left" *ngIf="isExpanded" [class.rotate]="catalogSelected" [class.rotate-back]="!catalogSelected"></i>
                 </mat-list-item>
             <div *ngIf="catalogSelected && isExpanded" class='sub-nav'>
-                <mat-list-item>
+                <mat-list-item [routerLink]="['/products']">
                     <i mat-list-icon class="las la-dot-circle"></i>
                     <h4 mat-line >Product</h4>
                 </mat-list-item>
@@ -341,7 +341,7 @@
             <app-head (onClick)="showNav()"></app-head>
         </div>
         <div class="content">
-            <app-dashboard></app-dashboard>
+            <router-outlet></router-outlet>
          </div>
          <div>
             <app-footer></app-footer>
