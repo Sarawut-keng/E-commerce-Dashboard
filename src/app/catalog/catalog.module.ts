@@ -10,6 +10,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
@@ -39,7 +45,13 @@ import { ProductTableComponent } from './product-table/product-table.component';
     MatPaginatorModule,
     MatTableModule,
     MatCheckboxModule,
-    RouterModule
+    RouterModule,
+    MatSlideToggleModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     ProductDetailComponent,

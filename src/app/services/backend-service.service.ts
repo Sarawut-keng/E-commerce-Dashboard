@@ -55,6 +55,10 @@ export class BackendServiceService {
     return this.DATA
   }
 
+  getProductDetail(id: number) {
+    return this.DATA[id - 1]
+  }
+
   DATA: productData[] = [
     {
       pId: 1,
@@ -123,7 +127,7 @@ export class BackendServiceService {
       pId: 4,
       pName: 'Apple MacBook Pro 13-inch',
       shortDescription: "A groundbreaking Retina display. A new force-sensing trackpad. All-flash architecture. Powerful dual-core and quad-core Intel processors. Together, these features take the notebook to a new level of performance. And they will do the same for you in everything you create.",
-      fullDescription: "With fifth-generation Intel Core processors, the latest graphics, and faster flash storage, the incredibly advanced MacBook Pro with Retina display moves even further ahead in performance and battery life.* *Compared with the previous generation.<br>Retina display with 2560-by-1600 resolution<br>Fifth-generation dual-core Intel Core i5 processor<br>Intel Iris Graphics<br>Up to 9 hours of battery life1<br>Faster flash storage2<br>802.11ac Wi-Fi<br>Two Thunderbolt 2 ports for connecting high-performance devices and transferring data at lightning speed<br>Two USB 3 ports (compatible with USB 2 devices) and HDMI<br>FaceTime HD camera<br>Pages, Numbers, Keynote, iPhoto, iMovie, GarageBand included<br>OS X, the world's most advanced desktop operating system",
+      fullDescription: "With fifth-generation Intel Core processors, the latest graphics, and faster flash storage, the incredibly advanced MacBook Pro with Retina display moves even further ahead in performance and battery life.* *Compared with the previous generation.Retina display with 2560-by-1600 resolution Fifth-generation dual-core Intel Core i5 processor Intel Iris Graphics Up to 9 hours of battery life1 Faster flash storage 802.11ac Wi-Fi Two Thunderbolt 2 ports for connecting high-performance devices and transferring data at lightning speed Two USB 3 ports (compatible with USB 2 devices) and HDMI FaceTime HD camera Pages, Numbers, Keynote, iPhoto, iMovie, GarageBand included OS X, the world's most advanced desktop operating system",
       sku: 'AP_MBP_13',
       categories: 'Computers',
       manufacturer: "Apple",
@@ -249,7 +253,7 @@ export class BackendServiceService {
       pId: 10,
       pName: 'Reversible Horseferry Check Belt',
       shortDescription: "Reversible belt in Horseferry check with smooth leather trim",
-      fullDescription: "Reversible belt in Horseferry check with smooth leather trim <br> lining, polished metal buckle",
+      fullDescription: "Reversible belt in Horseferry check with smooth leather trim lining, polished metal buckle",
       sku: 'RH_CHK_BL',
       categories: 'Apparel',
       manufacturer: "",
@@ -270,7 +274,7 @@ export class BackendServiceService {
       pId: 11,
       pName: 'Night Visions',
       shortDescription: "Night Visions is the debut studio album by American rock band Imagine Dragons.",
-      fullDescription: "Original Release Date: September 4, 2012<br>Release Date: September 4, 2012<br>Genre - Alternative rock, indie rock, electronic rock<br>Label - Interscope/KIDinaKORNER<br>Copyright: (C) 2011 Interscope Records",
+      fullDescription: "Original Release Date: September 4, 2012 Release Date: September 4, 2012 Genre - Alternative rock, indie rock, electronic rock Label - Interscope/KIDinaKORNER Copyright: (C) 2011 Interscope Records",
       sku: 'NIGHT_VSN',
       categories: 'Digital downloads',
       manufacturer: "",

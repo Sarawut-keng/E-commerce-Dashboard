@@ -1,0 +1,166 @@
+.product-header-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+}
+.product-header {
+	width: 97.5%;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
+}
+.product-header-name h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+}
+.product-header-name a {
+	cursor: pointer;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: rgb(80, 146, 245);
+	font-size: 16px;
+	text-decoration: none;
+}
+.product-header-button {
+	text-align: right;
+}
+.product-header-button button {
+	margin: 0px 2px;
+	cursor: pointer;
+}
+.product-header-button span {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	color: white;
+}
+.product-header-button mat-icon {
+	padding: 0px 2px;
+	color: white;
+}
+
+.save-btn {
+	color: white;
+	background-color: #3C8DBC;
+}
+.save-btn span {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	color: white;
+}
+.save-edit-btn {
+	background-color: #5F5CA8;
+}
+.copy-btn {
+	background-color:  #28A745;
+}
+.delete-btn {
+	background-color: #DD4B39;
+}
+
+.save-btn:hover {
+	background-color: #317297;
+}
+.save-edit-btn:hover {
+	background-color: #514f8f;
+}
+.copy-btn:hover {
+	background-color:  #1d8135;
+}
+.delete-btn:hover {
+	background-color: #bb4130;
+}
+
+.basic-advanced {
+	width: 110px;
+	margin-right: 5px;
+	font-weight: 600;
+	font-family: 'Source Sans Pro', sans-serif;
+	background-color: #3C8DBC;
+	color: white;
+}
+.basic-page-btn {
+	width: 110px;
+	margin-right: 5px;
+	font-weight: 600;
+	font-family: 'Source Sans Pro', sans-serif;
+	background-color: white;
+	color: #3C8DBC;
+	border: 1px solid #3C8DBC;
+}
+
+.setting-btn {
+	color: white;
+	background-color: #00C0EF;
+}
+.setting-btn span {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+}
+
+.productInfo-box-container {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	width: 95%;
+	padding-bottom: 20px;
+	border-top: 3px solid #00C0EF;
+}
+.card .las {
+	font-size: 30px;
+	padding: 5px 0px;
+}
+
+mat-card {
+	padding-top: 5px;
+	margin: 8px;
+	border: 0;
+}
+mat-card-title {
+	font-family: 'Source Sans Pro', sans-serif;
+	padding-top: 10px;
+	font-size: 18px;
+}
+mat-card-action mat-icon {
+	padding: 3px;
+}
+.product-info {
+	display: grid;
+	grid-template-columns: 1fr 3.5fr;
+	grid-template-rows: auto;
+}
+
+span mat-icon {
+	color: #3C8DBC;
+	font-size: 20px;
+}
+label {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: right;
+	padding-top: 20px;
+	padding-right: 20px;
+}
+mat-checkbox {
+	text-align: left;
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+.number-input {
+	width: 30%;
+}
+input, textarea, mat-label {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: #4D545A;
+}
+.example-form-field input::placeholder {
+	font-size: 14px;
+}

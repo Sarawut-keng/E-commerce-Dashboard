@@ -1,3 +1,245 @@
-<div>
-	{{ product.pName }}
-</div>
+<section class="product-header-container">
+	<div class="product-header">
+		<div class="product-header-name">
+			<h2>Edit product details - {{ product.pName }}</h2>
+			<p><a routerLink="/products"><i class="las la-arrow-circle-left"></i> back to product list</a>
+			</p>
+		</div>
+		<div class="product-header-button">
+			<button mat-flat-button class="save-btn">
+				<mat-icon>save_alt</mat-icon><span>Save</span>
+			</button>
+			<button mat-flat-button class="save-edit-btn">
+				<mat-icon>save_alt</mat-icon><span>Save and Continue Edit</span>
+			</button>
+			<button mat-flat-button class="copy-btn">
+				<mat-icon>library_add</mat-icon><span>Copy product</span>
+			</button>
+			<button mat-flat-button class="delete-btn">
+				<mat-icon>delete_forever</mat-icon><span>Delete</span>
+			</button>
+		</div>
+		<div class="product-header-option">
+			<button mat-flat-button (click)="isChange()" class="basic-advanced"
+				[class.basic-page-btn]="!isAdvanced">
+				{{isAdvanced ? 'Advanced ▶︎' : '◀︎ Basic'}}
+			</button>
+			<button mat-flat-button class="setting-btn">
+				<mat-icon>settings</mat-icon><span>Settings</span>
+			</button>
+		</div>
+	</div>
+</section>
+
+<section class="productInfo-box-container">
+	<mat-card class="card">
+		<mat-card-header>
+			<div mat-card-avatar><i class="las la-info"></i></div>
+			<mat-card-title>Product info</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<div class="product-info">
+
+				<label>Product name<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill">
+					<input matInput value="{{product.pName}}">
+				</mat-form-field>
+
+				<label>Short description<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill">
+					<textarea matInput value="{{product.shortDescription}}"></textarea>
+				</mat-form-field>
+
+				<label>Full description<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill">
+					<textarea matInput value="{{product.fullDescription}}"
+						[matTextareaAutosize]="true"></textarea>
+				</mat-form-field>
+
+				<label>SKU<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill">
+					<input matInput value="{{product.sku}}">
+				</mat-form-field>
+
+				<label>Categories<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field>
+					<mat-chip-list>
+						<mat-chip>{{product.categories}}</mat-chip>
+					</mat-chip-list>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Manufacturers<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<input matInput value="{{product.manufacturer}}">
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Published<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='product.published' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Product tags<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field *ngIf="isAdvanced">
+					<mat-chip-list>
+						<mat-chip *ngFor="let tag of product.pTag">
+							{{tag}}
+						</mat-chip>
+					</mat-chip-list>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">GTIN (global trade item number)<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<input matInput>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Manufacturer part number<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<input matInput>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Show on home page<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='true' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Display order<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced" class='number-input'>
+					<input matInput type="number" min="0" value="0">
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Product type<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<mat-select>
+						<mat-option>Simple</mat-option>
+						<mat-option>Grouped (product with variants)</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Product template<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<mat-select>
+						<mat-option>Simple product</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Visible individually<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='true' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Vendor<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<mat-select>
+						<mat-option>No vendor</mat-option>
+						<mat-option>Vendor 1</mat-option>
+						<mat-option>Vendor 2</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Require other products<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Allow customer reviews<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='true' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Available date range<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class="example-form-field" *ngIf="isAdvanced">
+					<mat-label>Enter a date range</mat-label>
+					<mat-date-range-input [rangePicker]="rangePicker">
+						<input matStartDate placeholder="Start date">
+						<input matEndDate placeholder="End date">
+					</mat-date-range-input>
+					<mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+					<mat-date-range-picker #rangePicker>
+						<mat-date-range-picker-actions>
+							<button mat-button matDateRangePickerCancel>Cancel</button>
+							<button mat-raised-button color="primary"
+								matDateRangePickerApply>Apply</button>
+						</mat-date-range-picker-actions>
+					</mat-date-range-picker>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Mask as new<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='true' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Mask as new: date range<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class="example-form-field" *ngIf="isAdvanced">
+					<mat-label>Enter a date range</mat-label>
+					<mat-date-range-input [rangePicker]="rangePicker">
+						<input matStartDate placeholder="Start date">
+						<input matEndDate placeholder="End date">
+					</mat-date-range-input>
+					<mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+					<mat-date-range-picker #rangePicker>
+						<mat-date-range-picker-actions>
+							<button mat-button matDateRangePickerCancel>Cancel</button>
+							<button mat-raised-button color="primary"
+								matDateRangePickerApply>Apply</button>
+						</mat-date-range-picker-actions>
+					</mat-date-range-picker>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Admin comment<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<textarea matInput
+						[matTextareaAutosize]="true"
+						rows="5"></textarea>
+				</mat-form-field>
+
+			</div>
+		</mat-card-content>
+	</mat-card>
+</section>
