@@ -110,3 +110,18 @@ mat-card-action mat-icon {
 	font-weight: 600;
 	color: white;
 }
+
+.products-box-container {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+.not-a-title {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+}
+.not-a-title a {
+	color: #3C8DBC;
+	cursor: pointer;
+}

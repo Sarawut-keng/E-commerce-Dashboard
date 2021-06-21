@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { ProductTableComponent } from './product-table/product-table.component';
 
 
 
@@ -18,7 +19,8 @@ import { SearchFormComponent } from './search-form/search-form.component';
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    ProductTableComponent
   ],
   imports: [
     CommonModule,
