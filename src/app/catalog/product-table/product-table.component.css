@@ -1,0 +1,21 @@
+.mat-elevation-z8 {
+	box-shadow: none;
+}
+table {
+	width: 100%;
+	border: 1px solid rgb(204, 204, 204);
+}
+
+.mat-column-checkbox, .mat-column-picture, .mat-column-published, .mat-column-edit, .mat-column-quantity {
+	text-align: center;
+}
+.mat-column-pName, .mat-column-sku, .mat-column-price {
+	text-align: left;
+}
+.mat-column-picture {
+	padding: 10px;
+}
+.mat-column-published mat-icon {
+	color: rgb(52, 114, 230);
+	font-weight: 900;
+}

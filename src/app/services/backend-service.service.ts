@@ -22,6 +22,28 @@ export interface productData {
   quantity: number
 }
 
+export class Product {
+  pId!: number
+  pName!: string
+  shortDescription!: string
+  fullDescription!: string
+  sku!: string
+  categories!: string
+  manufacturer!: string
+  published!: boolean
+  pTag!: string[]
+  pType!: string
+  vendor!: string
+  allowCustomerReview!: boolean
+  price!: number
+  taxCategory!: string
+  weight!: number
+  length!: number
+  width!: number
+  height!: number
+  quantity!: number
+}
+
 @Injectable({
   providedIn: 'root'
 })

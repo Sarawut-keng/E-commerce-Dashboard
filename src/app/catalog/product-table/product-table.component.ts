@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { ProductDetailComponent } from './../product-detail/product-detail.component';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { BackendServiceService } from 'src/app/services/backend-service.service';
-import { productData } from 'src/app/services/backend-service.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
 
 @Component({
   selector: 'app-product-table',
@@ -9,14 +16,21 @@ import { productData } from 'src/app/services/backend-service.service';
 })
 export class ProductTableComponent implements OnInit {
 
-  products!: productData[];
+  formatterChange = formatter;
 
-  constructor(private backendService: BackendServiceService) {
-    this.products = [];
-  }
+  @ViewChildren(ProductDetailComponent) productItem!: QueryList<ProductDetailComponent>
 
-  ngOnInit(): void {
-    this.products = this.backendService.getProducts()
+  constructor(private backendService: BackendServiceService) { }
+
+  ngOnInit(): void { }
+
+  displayedColumns: string[] = ['checkbox', 'picture', 'pName', 'sku', 'price', 'quantity', 'published', 'edit'];
+  dataSource = new MatTableDataSource(this.backendService.getProducts());
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
 }
