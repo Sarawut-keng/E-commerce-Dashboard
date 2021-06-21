@@ -4,7 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 import { MatDatepicker } from '@angular/material/datepicker';
 
+
 const Primary: ThemePalette = 'primary'
+
 
 @Component({
   selector: 'app-product-detail',
@@ -17,6 +19,8 @@ export class ProductDetailComponent implements OnInit {
   productId!: number;
   isAdvanced: boolean = true;
   primaryColor = Primary;
+  discount: string = "Sample discount with coupon code";
+  TaxCategory: string[] = ['None', 'Books', 'Electronics and Software', 'Downloadable products', 'Jewelry', 'Apparel'];
 
   @ViewChild(MatDatepicker) datepicker!: MatDatepicker<Date>
 

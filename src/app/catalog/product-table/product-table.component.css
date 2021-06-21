@@ -3,7 +3,7 @@
 }
 table {
 	width: 100%;
-	border: 1px solid rgb(204, 204, 204);
+	border: 1px solid rgb(212, 212, 212);
 }
 
 .mat-column-checkbox, .mat-column-picture, .mat-column-published, .mat-column-edit, .mat-column-quantity {
@@ -18,4 +18,13 @@ table {
 .mat-column-published mat-icon {
 	color: rgb(52, 114, 230);
 	font-weight: 900;
+}
+.mat-column-edit button {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+}
+.las {
+	font-size: 16px;
+	padding: 0px 3px 3px 3px;
 }

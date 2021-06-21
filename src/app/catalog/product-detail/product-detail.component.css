@@ -111,9 +111,15 @@
 	padding-bottom: 20px;
 	border-top: 3px solid #00C0EF;
 }
+
 .card .las {
 	font-size: 30px;
 	padding: 5px 0px;
+}
+
+.card-inside {
+	margin-top: 20px;
+	border: 1px solid #F2F2F2;
 }
 
 mat-card {
@@ -126,6 +132,9 @@ mat-card-title {
 	padding-top: 10px;
 	font-size: 18px;
 }
+mat-card-header {
+	border-bottom: 1px solid rgb(190, 189, 189);
+}
 mat-card-action mat-icon {
 	padding: 3px;
 }
@@ -133,6 +142,7 @@ mat-card-action mat-icon {
 	display: grid;
 	grid-template-columns: 1fr 3.5fr;
 	grid-template-rows: auto;
+	padding-top: 20px;
 }
 
 span mat-icon {
@@ -155,6 +165,12 @@ mat-checkbox {
 .number-input {
 	width: 30%;
 }
+.number-input span {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: #4D545A;
+}
 input, textarea, mat-label {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
@@ -163,4 +179,55 @@ input, textarea, mat-label {
 }
 .example-form-field input::placeholder {
 	font-size: 14px;
+}
+.prices-info {
+	display: grid;
+	grid-template-columns: 1fr 3.5fr;
+	grid-template-rows: auto;
+	padding-top: 20px;
+}
+
+.text-content p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 20px;
+	text-align: left;
+	padding: 16px;
+}
+.table-content {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+.table-content table {
+	border-collapse: collapse;
+	width: 97%;
+}
+.text-content tr,th,td {
+	border: 1px solid #e0e0e0;
+	padding: 15px 10px;
+}
+.table-content th {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 20px;
+	text-align: left;
+	font-weight: 900;
+	background-color: #F4F4F4;
+}
+.table-content td {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+}
+mat-paginator {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+}
+.price-action {
+	width: auto;
+	text-align: left;
+	background-color: #F7F7F7;
+	padding: 16px;
+}
+.price-action button {
+	margin-bottom: 15px;
 }

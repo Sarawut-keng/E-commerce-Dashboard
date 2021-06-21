@@ -136,7 +136,7 @@
 						<mat-icon>help</mat-icon>
 					</span></label>
 				<mat-form-field appearance="fill" *ngIf="isAdvanced">
-					<mat-select>
+					<mat-select [value]="product.pType">
 						<mat-option>Simple</mat-option>
 						<mat-option>Grouped (product with variants)</mat-option>
 					</mat-select>
@@ -147,7 +147,7 @@
 						<mat-icon>help</mat-icon>
 					</span></label>
 				<mat-form-field appearance="fill" *ngIf="isAdvanced">
-					<mat-select>
+					<mat-select value="Simple product">
 						<mat-option>Simple product</mat-option>
 					</mat-select>
 				</mat-form-field>
@@ -234,12 +234,158 @@
 						<mat-icon>help</mat-icon>
 					</span></label>
 				<mat-form-field appearance="fill" *ngIf="isAdvanced">
-					<textarea matInput
-						[matTextareaAutosize]="true"
-						rows="5"></textarea>
+					<textarea matInput [matTextareaAutosize]="true" rows="5"></textarea>
 				</mat-form-field>
 
 			</div>
+		</mat-card-content>
+	</mat-card>
+</section>
+
+<section class="productInfo-box-container">
+	<mat-card class="card">
+		<mat-card-header>
+			<div mat-card-avatar><i class="las la-dollar-sign"></i></div>
+			<mat-card-title>Prices</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<div class="prices-info">
+
+				<label>Price<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input'>
+					<input matInput type="number" min="0" [value]="product.price">
+					<span matSuffix>USD</span>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Old price<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced" class='number-input'>
+					<input matInput type="number" min="0" value="0">
+					<span matSuffix>USD</span>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Product cost<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced" class='number-input'>
+					<input matInput type="number" min="0" value="0">
+					<span matSuffix>USD</span>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Disable buy button<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Disable wishlist button<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Available for pre-order<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Call for price<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Customer enters price<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">PAngV (base price) enabled<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Discounts<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<input type="text" matInput [matAutocomplete]="auto">
+					<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+						<mat-option [value]='discount'>
+							{{ discount }}
+						</mat-option>
+					</mat-autocomplete>
+				</mat-form-field>
+
+				<label>Tax exempt<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor'>
+				</mat-checkbox>
+
+				<label>Tax category<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill">
+					<mat-select>
+						<mat-option *ngFor="let item of TaxCategory" [value]="item">
+							{{ item }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Telecommunications, broadcasting and electronic services<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+			</div>
+			<mat-card class="card-inside">
+				<mat-card-header>
+					<mat-card-title>Tier prices</mat-card-title>
+				</mat-card-header>
+				<mat-card-content>
+					<div class="text-content">
+						<p>
+							Tier pricing is a promotional tool that allows a store owner to price items differently for higher quantities.
+						</p>
+					</div>
+					<div class="table-content">
+						<table>
+							<tr>
+								<th>Store</th>
+								<th>Customer role</th>
+								<th>Quantity</th>
+								<th>Price</th>
+								<th>Start date</th>
+								<th>End date</th>
+							</tr>
+							<tr>
+								<td colspan="6">No data available in table</td>
+							</tr>
+						</table>
+					</div>
+					<mat-paginator [length]="100"
+						[pageSize]="10"
+						[pageSizeOptions]="[5, 10, 25, 100]">
+					</mat-paginator>
+				</mat-card-content>
+				<mat-card-actions class='price-action'>
+					<button mat-flat-button class="save-btn">Add new tier price</button>
+				</mat-card-actions>
+			</mat-card>
 		</mat-card-content>
 	</mat-card>
 </section>
