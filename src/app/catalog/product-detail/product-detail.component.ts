@@ -21,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
   primaryColor = Primary;
   discount: string = "Sample discount with coupon code";
   TaxCategory: string[] = ['None', 'Books', 'Electronics and Software', 'Downloadable products', 'Jewelry', 'Apparel'];
+  deliveryDate: string[] = ['None', '1-2 days', '3-5 days', '1 week'];
 
   @ViewChild(MatDatepicker) datepicker!: MatDatepicker<Date>
 

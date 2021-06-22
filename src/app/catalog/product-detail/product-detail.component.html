@@ -345,7 +345,8 @@
 					</mat-select>
 				</mat-form-field>
 
-				<label *ngIf="isAdvanced">Telecommunications, broadcasting and electronic services<span matTooltip="Search by specific warehouse">
+				<label *ngIf="isAdvanced">Telecommunications, broadcasting and electronic services<span
+						matTooltip="Search by specific warehouse">
 						<mat-icon>help</mat-icon>
 					</span></label>
 				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
@@ -359,7 +360,8 @@
 				<mat-card-content>
 					<div class="text-content">
 						<p>
-							Tier pricing is a promotional tool that allows a store owner to price items differently for higher quantities.
+							Tier pricing is a promotional tool that allows a store owner to
+							price items differently for higher quantities.
 						</p>
 					</div>
 					<div class="table-content">
@@ -377,8 +379,7 @@
 							</tr>
 						</table>
 					</div>
-					<mat-paginator [length]="100"
-						[pageSize]="10"
+					<mat-paginator [length]="100" [pageSize]="10"
 						[pageSizeOptions]="[5, 10, 25, 100]">
 					</mat-paginator>
 				</mat-card-content>
@@ -386,6 +387,89 @@
 					<button mat-flat-button class="save-btn">Add new tier price</button>
 				</mat-card-actions>
 			</mat-card>
+		</mat-card-content>
+	</mat-card>
+</section>
+
+<section class="productInfo-box-container">
+	<mat-card class="card">
+		<mat-card-header>
+			<div mat-card-avatar><i class="las la-shipping-fast"></i></div>
+			<mat-card-title>Shipping</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<div class="product-info">
+				<label>Shipping enabled<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='true' [color]='primaryColor'>
+				</mat-checkbox>
+
+				<label>Weight<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input'>
+					<input matInput type="number" min="0" value="{{product.weight}}">
+					<span matSuffix>lb(s)</span>
+				</mat-form-field>
+
+				<label>Length<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input'>
+					<input matInput type="number" min="0" value="{{product.length}}">
+					<span matSuffix>inch(es)</span>
+				</mat-form-field>
+
+				<label>Width<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input'>
+					<input matInput type="number" min="0" value="{{product.width}}">
+					<span matSuffix>inch(es)</span>
+				</mat-form-field>
+
+				<label>Height<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input'>
+					<input matInput type="number" min="0" value="{{product.height}}">
+					<span matSuffix>inch(es)</span>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Free shipping<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='true' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Ship separately<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Additional shipping charge<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input' *ngIf="isAdvanced">
+					<input matInput type="number" min="0" value="0">
+					<span matSuffix>USD</span>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Delivery date<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<mat-select>
+						<mat-option *ngFor="let item of deliveryDate" [value]="item">
+							{{ item }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
 		</mat-card-content>
 	</mat-card>
 </section>
