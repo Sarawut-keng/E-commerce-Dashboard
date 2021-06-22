@@ -20,6 +20,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class AppComponent {
   title = 'e-Commerce-Dashboard';
 
+  checkButton: boolean = false;
+
   isExpanded: boolean = false;
 
   catalogSelected: boolean = false;
@@ -43,8 +45,14 @@ export class AppComponent {
     }
   }
 
+  checkExpand() {
+    if (this.checkButton == true || this.isExpanded == false) {
+    } else {this.isExpanded = !this.isExpanded}
+  };
+
   showNav() {
     this.isExpanded = !this.isExpanded;
+    this.checkButton = !this.checkButton;
   }
 
   isCatalog() {

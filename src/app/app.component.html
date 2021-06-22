@@ -1,5 +1,5 @@
-<mat-drawer-container class="container mat-typography" autosize>
-    <mat-drawer #drawer mode="side" disableClose="true" opened="true" [class.expanded]="isExpanded">
+<mat-drawer-container class="container mat-typography animate" autosize>
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true" [class.expanded]="isExpanded" (mouseover)='isExpanded = true'>
       <mat-nav-list>
         <div [class.logo-container]="isExpanded">
             <mat-list-item id="logo" class="logo">
@@ -336,7 +336,7 @@
       </mat-nav-list>
     </mat-drawer>
   
-    <div>
+    <div (mouseover)='checkExpand()'>
         <div>
             <app-head (onClick)="showNav()"></app-head>
         </div>
