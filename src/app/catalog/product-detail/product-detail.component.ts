@@ -99,4 +99,8 @@ export class ProductDetailComponent implements OnInit {
     this.isAdvanced = !this.isAdvanced;
   };
 
+  deleteButton() {
+    confirm('Do you want to delete ?')
+  };
+
 }

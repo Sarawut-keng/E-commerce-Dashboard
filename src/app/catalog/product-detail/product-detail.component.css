@@ -191,7 +191,7 @@ input, textarea, mat-label {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
 	text-align: left;
-	padding: 16px;
+	padding: 16px 16px 0px 16px;
 }
 .table-content {
 	display: flex;
@@ -200,6 +200,7 @@ input, textarea, mat-label {
 	justify-content: center;
 }
 .table-content table {
+	margin-top: 16px;
 	border-collapse: collapse;
 	width: 97%;
 }
@@ -230,4 +231,19 @@ mat-paginator {
 }
 .price-action button {
 	margin-bottom: 15px;
+}
+#picture-table {
+	width: 150px;
+	height: 150px;
+}
+.table-content .las {
+	font-size: 20px;
+	padding: 2px;
+}
+.picture-table-btn {
+	width: 150px;
+	margin: 16px 0px 18px 0px;
+}
+.add-product-picture-btn {
+	width: 170px;
 }

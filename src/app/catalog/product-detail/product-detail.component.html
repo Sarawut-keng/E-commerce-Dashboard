@@ -629,3 +629,62 @@
 		</mat-card-content>
 	</mat-card>
 </section>
+
+<section class="productInfo-box-container">
+	<mat-card class="card">
+		<mat-card-header>
+			<div mat-card-avatar><i class="las la-image"></i></div>
+			<mat-card-title>Pictures</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<div class="table-content">
+				<table>
+					<tr>
+						<th>Picture</th>
+						<th>Display order</th>
+						<th>Alt</th>
+						<th>Title</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+					<tr>
+						<td><img id='picture-table' src="../../../assets/images/{{product.pId}}.jpeg" alt="product-picture"></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td><button mat-flat-button color='accent'><i class="las la-pen"></i>Edit</button></td>
+						<td><button mat-flat-button color='warn' (click)="deleteButton()"><i class="las la-trash"></i>Delete</button></td>
+					</tr>
+				</table>
+			</div>
+			<mat-paginator [length]="100" [pageSize]="10"
+				[pageSizeOptions]="[5, 10, 25, 100]">
+			</mat-paginator>
+			<mat-card class="card-inside">
+				<mat-card-header>
+					<mat-card-title>Add a new picture</mat-card-title>
+				</mat-card-header>
+				<mat-card-content>
+					<div class="product-info">
+						<label>Picture</label>
+						<button mat-flat-button class="copy-btn picture-table-btn">Upload a file</button>
+						<label>Alt</label>
+						<mat-form-field appearance="fill">
+							<input matInput>
+						</mat-form-field>
+						<label>Title</label>
+						<mat-form-field appearance="fill">
+							<input matInput>
+						</mat-form-field>
+						<label>Display order</label>
+						<mat-form-field appearance="fill" class='number-input'>
+							<input matInput type="number" min="0" value="0">
+						</mat-form-field>
+						<label> </label>
+						<button mat-flat-button class="save-btn picture-table-btn add-product-picture-btn">Add product picture</button>
+					</div>
+				</mat-card-content>
+			</mat-card>
+		</mat-card-content>
+	</mat-card>
+</section>
