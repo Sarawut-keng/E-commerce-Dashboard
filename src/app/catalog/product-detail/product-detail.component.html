@@ -473,3 +473,159 @@
 		</mat-card-content>
 	</mat-card>
 </section>
+
+<section class="productInfo-box-container">
+	<mat-card class="card">
+		<mat-card-header>
+			<div mat-card-avatar><i class="las la-boxes"></i></div>
+			<mat-card-title>Inventory</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<div class="product-info">
+
+				<label>Inventory method<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill">
+					<mat-select [(value)]="selectedInventoryMethod">
+						<mat-option *ngFor="let item of inventoryMethod" [value]="item.value">
+							{{ item.show }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="selectedInventoryMethod == 'track'">Stock quantity<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input' *ngIf="selectedInventoryMethod == 'track'">
+					<input matInput type="number" min="0" value="{{product.quantity}}">
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Warehouse<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<mat-select [(value)]="selectedWarehouse">
+						<mat-option *ngFor="let item of warehouse" [value]="item.value">
+							{{ item.show }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced && selectedInventoryMethod == 'track'">Multiple warehouses<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced && selectedInventoryMethod == 'track'">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">Display availability<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='true' [color]='primaryColor' *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">Display stock quantity<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">Minimum stock qty<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input' *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">
+					<input matInput type="number" min="0" value="0">
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">Low stock activity<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced && (selectedInventoryMethod == 'track' || selectedInventoryMethod == 'track-attr')">
+					<mat-select [(value)]="selectedLowStockActivity">
+						<mat-option *ngFor="let item of lowStockActivity" [value]="item.value">
+							{{ item.show }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced && selectedInventoryMethod == 'track'">Notify for qty button<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input' *ngIf="isAdvanced && selectedInventoryMethod == 'track'">
+					<input matInput type="number" min="0" value="1">
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced && selectedInventoryMethod == 'track'">Backorders<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced && selectedInventoryMethod == 'track'">
+					<mat-select [(value)]="selectedBackorders">
+						<mat-option *ngFor="let item of backorders" [value]="item.value">
+							{{ item.show }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced && (selectedInventoryMethod == 'track' && selectedBackorders == 'none')">Allow back in stock subscriptions<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced && (selectedInventoryMethod == 'track' && selectedBackorders == 'none')">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced && ((selectedInventoryMethod == 'track' && (selectedBackorders == 'none' || selectedBackorders == 'allow-2')) || selectedInventoryMethod == 'track-attr')">Product availability range<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced && ((selectedInventoryMethod == 'track' && (selectedBackorders == 'none' || selectedBackorders == 'allow-2')) || selectedInventoryMethod == 'track-attr')">
+					<mat-select [(value)]="selectedPAR">
+						<mat-option *ngFor="let item of productAvailabilityRange"
+							[value]="item.value">
+							{{ item.show }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Minimum cart qty<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input' *ngIf="isAdvanced">
+					<input matInput type="number" min="1" value="1">
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Maximum cart qty<span matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" class='number-input' *ngIf="isAdvanced">
+					<input matInput type="number" min="1" value="10000">
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced">Allowed quantities<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-form-field appearance="fill" *ngIf="isAdvanced">
+					<input matInput>
+				</mat-form-field>
+
+				<label *ngIf="isAdvanced && selectedInventoryMethod == 'track-attr'">Allow only existing attribute combinations<span
+					matTooltip="Search by specific warehouse">
+					<mat-icon>help</mat-icon>
+				</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced && selectedInventoryMethod == 'track-attr'">
+				</mat-checkbox>
+
+				<label *ngIf="isAdvanced">Not returnable<span
+						matTooltip="Search by specific warehouse">
+						<mat-icon>help</mat-icon>
+					</span></label>
+				<mat-checkbox [checked]='false' [color]='primaryColor' *ngIf="isAdvanced">
+				</mat-checkbox>
+
+
+			</div>
+		</mat-card-content>
+	</mat-card>
+</section>
