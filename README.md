@@ -1,27 +1,29 @@
 # ECommerceDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
+This repo is part of the homework for the Coding the future camp #2. This project is using Angular along with Angular material. On this project i have gain an experince about using object in angular material and some chart, also the logic of web dasboard. There is a service within itself (it's mean that this project have no backend, only conduct data in the service.ts) and have routing with three main component: Dashboard, Products, and Product detail.
 
-## Development server
+#### note: This project is created by reference the nopCommerce, and I have only using for practice my skill. There is no purpose to find income or benefit in this project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## This is some example of the UI
 
-## Code scaffolding
+### routing: ```/home```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![screencapture-localhost-4200-2021-06-22-16_42_27](https://user-images.githubusercontent.com/68180592/122903518-ab195600-d379-11eb-9989-42f1db5e776d.png)
 
-## Build
+### routing: ```/home```  and expand sidebar
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![screencapture-localhost-4200-home-2021-06-22-16_47_35](https://user-images.githubusercontent.com/68180592/122903599-c1bfad00-d379-11eb-8aa2-849aab883446.png)
 
-## Running unit tests
+### routing: ```/products```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![screencapture-localhost-4200-products-2021-06-22-16_43_18](https://user-images.githubusercontent.com/68180592/122903648-cdab6f00-d379-11eb-9a20-88a3fbc93ca3.png)
 
-## Running end-to-end tests
+### routing: ```/products/:id``` with basic mode of configuration
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![screencapture-localhost-4200-products-2-2021-06-22-16_44_07](https://user-images.githubusercontent.com/68180592/122903871-03e8ee80-d37a-11eb-91b1-5e47438d336e.png)
 
-## Further help
+### routing: ```/products/:id``` with advanced mode of configuration
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![screencapture-localhost-4200-products-2-2021-06-22-16_48_02](https://user-images.githubusercontent.com/68180592/122903973-1cf19f80-d37a-11eb-81bd-0c089cc76d15.png)
+
+# Thank you for review my project :)
